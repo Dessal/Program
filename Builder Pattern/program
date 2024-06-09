@@ -1,0 +1,22 @@
+namespace Builder_Pattern
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            DogBuilder builder = new DogBuilder();
+            Dog myDog = builder
+                .SetName("BULLY")
+                .SetBreed("Beagle")
+                .SetAge(4)
+                .AddToy("BONES")
+                .AddToy("BALL")
+                .Build();
+
+            Console.WriteLine($"Name: {myDog.Name}");
+            Console.WriteLine($"Breed: {myDog.Breed}");
+            Console.WriteLine($"Age: {myDog.Age}");
+            Console.WriteLine("Toys: " + string.Join(", ", myDog.Toys));
+        }
+    }
+}
